@@ -37,5 +37,13 @@ HIGH_NP = "High-N/P"
 PHOSPHATIC = "Phosphatic"
 NITROGENOUS = "Nitrogenous"
 
+numerical_input_columns = [
+    TEMPERATURE_COLUMN,
+    HUMIDITY_COLUMN,
+    MOISTURE_COLUMN,
+    NITROGEN_COLUMN,
+    POTASSIUM_COLUMN,
+    PHOSPHOROUS_COLUMN,
+]
 
 categorical_input_columns = [CROP_TYPE_COLUMN, SOIL_TYPE_COLUMN]
