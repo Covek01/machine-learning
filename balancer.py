@@ -6,6 +6,7 @@ import ipdb
 
 def balance_SMOTENC(
     df: DataFrame,
+    df_y: DataFrame,
     feature_columns: list[str],
     target_column: str,
     categorical_features: list[int],
@@ -20,8 +21,8 @@ def balance_SMOTENC(
     Returns:
         DataFrame: balanced DataFrame
     """
-    df_features = df[feature_columns]
-    df_target = df[target_column]
+    df_features = df
+    df_target = df_y
 
     smote = SMOTENC(
         categorical_features=categorical_features,
@@ -29,10 +30,7 @@ def balance_SMOTENC(
     )
     X_resampled, y_resampled = smote.fit_resample(df_features, df_target)
 
-    df_balanced = DataFrame(X_resampled, columns=feature_columns)
-    df_balanced[target_column] = y_resampled
-
-    return df_balanced
+    return X_resampled, y_resampled
 
 
 # def balance_upsample(df: DataFrame)

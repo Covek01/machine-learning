@@ -25,12 +25,30 @@ column_list = [
 fertilizer_groupation = {
     "10-26-26": "NPK Complex",
     "14-35-14": "NPK Complex",
-    "17-17-17": "NPK Complex",
+    "17-17-17": "NPK Complex",  
     "20-20": "High-N/P",
     "28-28": "High-N/P",
     "DAP": "Phosphatic",
     "Urea": "Nitrogenous",
 }
+
+crop_groupation = {
+    "Maize": "Cereals",
+    "Paddy": "Cereals",
+    "Wheat": "Cereals",
+    "Barley": "Cereals",
+    "Millets": "Cereals",
+
+    "Oil seeds": "Oilseeds",
+    "Ground Nuts": "Oilseeds",
+
+    "Pulses": "Pulses",
+
+    "Cotton": "Cash crops",
+    "Sugarcane": "Cash crops",
+    "Tobacco": "Cash crops",
+}
+
 
 NPK_COMPLEX = "NPK Complex"
 HIGH_NP = "High-N/P"
@@ -46,4 +64,8 @@ numerical_input_columns = [
     PHOSPHOROUS_COLUMN,
 ]
 
-categorical_input_columns = [CROP_TYPE_COLUMN, SOIL_TYPE_COLUMN]
+# categorical_input_columns = [SOIL_TYPE_COLUMN, FERTILIZER_NAME_COLUMN]
+# output_column = [CROP_TYPE_COLUMN]
+
+categorical_input_columns = [SOIL_TYPE_COLUMN, CROP_TYPE_COLUMN]
+output_column = [FERTILIZER_NAME_COLUMN]
